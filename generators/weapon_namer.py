@@ -90,8 +90,8 @@ def named_title():
     name1 = new_word(hash, start, 3, 5)
     name2 = new_word(hash, start, 6, 10)
 
-    return ' '.join((name1, name2, 'the', generate_title()))
+    return titlecase(' '.join((name1, name2, 'the', generate_title())))
     
 if __name__ == '__main__':
-    print(titlecase(named_title()))
+    print(named_title())
     #print (generate_title())
