@@ -19,5 +19,5 @@ jobs:
           aws-region: us-west-2
       - name: Deploy
         run:
-          zip -j deploy.zip ./
-          aws lambda update-function-code --function-name generators --zip-file=fileb://deploy.zip
+          zip -j deploy.zip ./*
+          aws lambda update-function-code --function-name=generators --zip-file=fileb://deploy.zip
