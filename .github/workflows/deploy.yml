@@ -1,4 +1,4 @@
-name: LambdaDeploy
+name: DeployGenerators
 
 on:
   push:
@@ -19,5 +19,5 @@ jobs:
           aws-region: us-west-2
       - name: Deploy
         run: |
-          zip -j deploy.zip ./*
+          zip -r deploy.zip ./generators/*
           aws lambda update-function-code --function-name=generators --zip-file=fileb://deploy.zip
