@@ -74,6 +74,13 @@ titles = (
     'wind of {2}',
 )
 
+def titlecase(title):
+    words = title.split()
+    ignore = ('a', 'an', 'the', 'and', 'but', 'for', 'nor', 'or', 'so', 'yet',
+              'in', 'to', 'for', 'on', 'at', 'as', 'from', 'by', 'of')
+    words = [word if word in ignore else word[0].upper()+word[1:] for word in words]
+    return ' '.join(words)
+
 def generate_title():
     return random.choice(titles).format(*random.choice(targets))
 
@@ -86,5 +93,5 @@ def named_title():
     return ' '.join((name1, name2, 'the', generate_title()))
     
 if __name__ == '__main__':
-    print(named_title())
+    print(titlecase(named_title()))
     #print (generate_title())
