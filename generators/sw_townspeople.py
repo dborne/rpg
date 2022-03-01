@@ -17,6 +17,142 @@ tool = (
     'knife'
 )
 
+appearance = (
+    'aquiline',
+    'athletic',
+    'barrel-chested',
+    'boney',
+    'brawny',
+    'brutish',
+    'chiseled',
+    'coltish',
+    'craggy',
+    'delicate',
+    'furrowed',
+    'gaunt',
+    'gorgeous',
+    'grizzled',
+    'haggard',
+    'handsome',
+    'hideous',
+    'lanky',
+    'pudgy',
+    'scrawny',
+    'slender',
+    'solid',
+    'square-jawed',
+    'statuesque',
+    'towering',
+    'trim',
+    'weathered',
+    'willowy',
+    'wiry',
+    'wrinkled',
+)
+
+detail =  (
+    'a birthmark',
+    'braided hair',
+    'a broken nose',
+    'bronze skin',
+    'bushy eyebrows',
+    'curly hair',
+    'dark skin',
+    'a deep voice',
+    'dreadlocks',
+    'an exotic accent',
+    'freckles',
+    'a gravelly voice',
+    'a gold tooth',
+    'a hoarse voice',
+    'a huge beard',
+    'light skin',
+    'long hair',
+    'matted hair',
+    'missing teeth',
+    'a mustache',
+    'mutton chops',
+    'nine fingers',
+    'oiled hair',
+    'one eye',
+    'pale skin',
+    'piercings',
+    'sallow skin',
+    'scars',
+    'a shaved head',
+    'a sunburn',
+    'tangled hair',
+    'tattoos',
+    'a topknot',
+)
+
+clothing = (
+    'antique',
+    'bedraggled',
+    'ceremonial',
+    'dated',
+    'decaying',
+    'eccentric',
+    'elegant',
+    'exotic',
+    'fashionable',
+    'flamboyant',
+    'food-stained',
+    'formal',
+    'frayed',
+    'frumpy',
+    'grimy',
+    'lacey',
+    'muddy',
+    'oversized',
+    'patched',
+    'patterened',
+    'perfumed',
+    'practical',
+    'rumpled',
+    'singed',
+    'tasteless',
+    'torn',
+    'undersized',
+    'wine-stained',
+    'worn out',
+)
+
+personality = (
+    'bitter',
+    'brave',
+    'cautious',
+    'chipper',
+    'contrary',
+    'cowardly',
+    'cunning',
+    'driven',
+    'entitled',
+    'gregarious',
+    'grumpy',
+    'hotheaded',
+    'inquisitive',
+    'jolly',
+    'lazy',
+    'loyal',
+    'menacing',
+    'mopey',
+    'nervous',
+    'protective',
+    'righteous',
+    'rude',
+    'sarcastic',
+    'savage',
+    'scheming',
+    'serene',
+    'spacey',
+    'stoic',
+    'stubborn',
+    'stuck-up',
+    'suspicious',
+    'wisecracking'
+)
+
 stuff = (
     'A folded piece of leather containing several pieces of blank parchment',
     'A diary/journal',
@@ -233,7 +369,9 @@ score_mod = lambda x: x//2 - 5
 
 def character():
     char = {}
-    char['abilities'] = statblock()
+    stats = statblock()
+    char['abilities'] = stats 
+    char['ability mods'] = {k:f'{score_mod(v):+}' for (k,v) in stats.items()}
     (job, weapon, gear, prof) = random.choice(jobs)
 
     if isinstance(weapon, tuple):
@@ -243,6 +381,9 @@ def character():
         gear = random.choice(gear)
 
     char['race'] = random.choice(race)
+    char['description'] = f'a {random.choice(personality)}, {random.choice(appearance)} '\
+                          f'{char["race"]} with {random.choice(detail)} wearing '\
+                          f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
     char['gear'] = f'{gear}, {random.choice(stuff)}'
