@@ -80,18 +80,21 @@ def titlecase(title):
               'in', 'to', 'for', 'on', 'at', 'as', 'from', 'by', 'of')
     words = [word if word in ignore else word[0].upper()+word[1:] for word in words]
     return ' '.join(words)
+    
+def name():
+    langfiles = os.listdir('name_files')
+    (hash, start) = lc(os.path.join('name_files',random.choice(langfiles)))
+    name1 = new_word(hash, start, 3, 5)
+    name2 = new_word(hash, start, 6, 10)
+    return titlecase(' '.join((name1, name2)))
 
 def generate_title():
     return random.choice(titles).format(*random.choice(targets))
 
 def named_title():
-    langfiles = os.listdir('name_files')
-    (hash, start) = lc(os.path.join('name_files',random.choice(langfiles)))
-    name1 = new_word(hash, start, 3, 5)
-    name2 = new_word(hash, start, 6, 10)
-
-    return titlecase(' '.join((name1, name2, 'the', generate_title())))
+    return titlecase(' '.join((name(), 'the', generate_title())))
     
 if __name__ == '__main__':
-    print(named_title())
+    for x in range(100):
+        print(named_title())
     #print (generate_title())
