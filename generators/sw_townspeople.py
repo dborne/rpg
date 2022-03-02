@@ -386,7 +386,7 @@ def character():
                           f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
-    char['gear'] = f'{gear}, {random.choice(stuff)}'
+    char['gear'] = [gear, random.choice(stuff)]
     
     char['skills'] = {}
     char['proficiencies'] = {}
