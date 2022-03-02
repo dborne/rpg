@@ -389,11 +389,13 @@ def character():
     char['gear'] = f'{gear}, {random.choice(stuff)}'
     
     char['skills'] = {}
+    char['proficiencies'] = {}
     for skill in skill_ability.keys():
         val = score_mod(char['abilities'][skill_ability[skill]])
         if skill == prof:
             val += proficiency_bonus
-        char['skills'][skill] = f'{val:+}{"*" if skill == prof else ""}'
+        char['skills'][skill] = val
+        char['proficiencies'][skill] = True if skill == prof else False
 
     return char
 
