@@ -371,7 +371,7 @@ def character():
     char = {}
     stats = statblock()
     char['abilities'] = stats 
-    char['ability mods'] = {k:f'{score_mod(v):+}' for (k,v) in stats.items()}
+    char['ability_mods'] = {k:f'{score_mod(v):+}' for (k,v) in stats.items()}
     (job, weapon, gear, prof) = random.choice(jobs)
 
     if isinstance(weapon, tuple):
