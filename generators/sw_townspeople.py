@@ -394,7 +394,7 @@ def character():
         val = score_mod(char['abilities'][skill_ability[skill]])
         if skill == prof:
             val += proficiency_bonus
-        char['skills'][skill] = val
+        char['skills'][skill] = f'{val:+}'
         char['proficiencies'][skill] = True if skill == prof else False
 
     return char
