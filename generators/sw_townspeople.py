@@ -234,6 +234,12 @@ animal = (
     'a sheep',
 )
 
+cantrip = (
+    'Acid splash',
+    'Fire bolt',
+    'Ray of frost',
+)
+
 jobs = [
     ('Alchemist',           'Staff', 'Oil - 1 flask', 'Arcana'),
     ('Animal trainer',      tool, animal, 'Animal Handling'),
@@ -256,7 +262,7 @@ jobs = [
     ('Drifter',             'Sling', stuff, 'Investigation'),
     ('Farmer',              tool,  animal, 'Animal Handling'),
     ('Farrier',             'Hammer', 'pliers', 'Animal Handling'),
-    ('Forester',            'Staff', 'Herbs', 'Nature'),
+    ('Forester',            'Shortbow', 'Herbs', 'Nature'),
     ('Fortune-teller',      'Dagger', 'Tarot deck', 'Performance'),
     ('Gambler',             'Sap', 'Dice', 'Sleight of Hand'),
     ('Gongfarmer',          tool, 'Sack of night soil', 'Athletics'),
@@ -289,7 +295,7 @@ jobs = [
     ('Scribe',              'Darts', 'Parchment, quill pen and ink', 'Investigation'),
     ('Shaman',              tool, 'Herbs', 'Religion'),
     ('Smuggler',            'Sling', 'Waterproof sack', 'Stealth'),
-    ('Squire',              'Longsword', 'Iron helmet', 'Athletics'),
+    ('Squire',              'Short sword', 'Iron helmet', 'Athletics'),
     ('Tanner',              'Knife', 'waterproof bag', 'Athletics'),
     ('Trader',              'Short sword', '20 sp', 'Persuasion'),
     ('Trapper',             'Sling', 'Badger pelt', 'Survival'),
@@ -297,7 +303,7 @@ jobs = [
     ('Vagrant',             'Club', 'Begging bowl', 'Deception'),
     ('Wainwright',          tool, 'Pushcart', 'Athletics'),
     ('Weaver',              'Dagger', 'Fine suit of clothes', 'Perception'),
-    ('Wizard’s apprentice', 'Dagger', 'spellbook', 'Arcana'),
+    ('Wizard\'s apprentice', cantrip, 'spellbook', 'Arcana'),
     ('Woodcutter',          'Axe', 'Bundle of wood', 'Athletics')
 ]
 
@@ -311,23 +317,27 @@ armor_values = {
 
 default_weapon = {'damage': '1d4', 'weight': '1lb', 'properties': 'improvised, thrown(20/60)'}
 weapon_stats = {
-    'Axe'         : {'damage': '1d6 s', 'weight': '4lb', 'properties': 'versatile (1d8)'},
-    'Club'        : {'damage': '1d4 b', 'weight': '2lb', 'properties': 'light'},
-    'Dagger'      : {'damage': '1d4 p', 'weight': '1lb', 'properties': 'finesse, light, thrown(20/60)'},
-    'Darts'       : {'damage': '1d4 p', 'weight': '1/4lb', 'properties': 'finesse, thrown(20/60)'},
-    'Flail'       : {'damage': '1d6 b', 'weight': '2lb', 'properties': ''},
-    'Hammer'      : {'damage': '1d4 b', 'weight': '2lb', 'properties': 'light, thrown(20/60)'},
-    'Knife'       : {'damage': '1d4 s', 'weight': '1lb', 'properties': 'finesse, light, thrown(10/60)'},
-    'Longbow'     : {'damage': '1d8 p', 'weight': '2lb', 'properties': 'range(150/600), heavy, two-handed'},
-    'Longsword'   : {'damage': '1d8 s', 'weight': '3lb', 'properties': 'versatile (1d10)'},
-    'Mace'        : {'damage': '1d6 b', 'weight': '4lb', 'properties': ''},
-    'Scythe'      : {'damage': '1d6 s', 'weight': '3lb', 'properties': 'two-handed'},
-    'Short sword' : {'damage': '1d6 p', 'weight': '2lb', 'properties': 'finesse, light'},
-    'Sickle'      : {'damage': '1d4 s', 'weight': '2lb', 'properties': 'light'},
+    'Axe'         : {'damage': '1d6 s', 'weight': '4', 'properties': 'versatile (1d8)'},
+    'Club'        : {'damage': '1d4 b', 'weight': '2', 'properties': 'light'},
+    'Dagger'      : {'damage': '1d4 p', 'weight': '1', 'properties': 'finesse, light, thrown(20/60)'},
+    'Darts'       : {'damage': '1d4 p', 'weight': '1/4', 'properties': 'finesse, thrown(20/60)'},
+    'Flail'       : {'damage': '1d6 b', 'weight': '2', 'properties': ''},
+    'Hammer'      : {'damage': '1d4 b', 'weight': '2', 'properties': 'light, thrown(20/60)'},
+    'Knife'       : {'damage': '1d4 s', 'weight': '1', 'properties': 'finesse, light, thrown(10/60)'},
+    'Longbow'     : {'damage': '1d8 p', 'weight': '2', 'properties': 'range(150/600), heavy, two-handed'},
+    'Longsword'   : {'damage': '1d8 s', 'weight': '3', 'properties': 'versatile (1d10)'},
+    'Mace'        : {'damage': '1d6 b', 'weight': '4', 'properties': ''},
+    'Scythe'      : {'damage': '1d6 s', 'weight': '3', 'properties': 'two-handed'},
+    'Shortbow'    : {'damage': '1d6 p', 'weight': '2', 'properties': 'range(80/320), two-handed'},
+    'Short sword' : {'damage': '1d6 p', 'weight': '2', 'properties': 'finesse, light'},
+    'Sickle'      : {'damage': '1d4 s', 'weight': '2', 'properties': 'light'},
     'Sling'       : {'damage': '1d4 b', 'weight': '-', 'properties': 'range(30/120)'},
-    'Spear'       : {'damage': '1d6 p', 'weight': '3lb', 'properties': 'thrown(20/60), versatile(1d8)'},
-    'Staff'       : {'damage': '1d6 b', 'weight': '4lb', 'properties': 'versatile (1d8)'},
-    'Whip'        : {'damage': '1d4 s', 'weight': '3lb', 'properties': 'finesse, reach'},
+    'Spear'       : {'damage': '1d6 p', 'weight': '3', 'properties': 'thrown(20/60), versatile(1d8)'},
+    'Staff'       : {'damage': '1d6 b', 'weight': '4', 'properties': 'versatile (1d8)'},
+    'Whip'        : {'damage': '1d4 s', 'weight': '3', 'properties': 'finesse, reach'},
+    'Acid splash' : {'damage': '1d6',  'range': '60',  'properties': '1-2 creatures within 5 feet, Dex save'},
+    'Fire bolt'   : {'damage': '1d10', 'range': '120', 'properties': 'Attack roll'},
+    'Ray of frost': {'damage': '1d8',  'range': '60',  'properties': 'Attack roll, -10 feet movement on hit'},
 }
 
 
@@ -426,7 +436,7 @@ race_traits = {
     
 def statblock():
     labels = ('str', 'dex', 'con', 'int', 'wis', 'cha')
-    vals = [round(random.gammavariate(9, .3))+6 for x in range(6)]
+    vals = [{'val':round(random.gammavariate(9, .3))+6} for x in range(6)]
     return dict(zip(labels, vals))
 
 proficiency_bonus = 1
@@ -436,9 +446,12 @@ score_mod = lambda x: x//2 - 5
 def character():
     char = {}
     stats = statblock()
+    for ability in stats.keys():
+        mod = score_mod(stats[ability]['val'])
+        stats[ability]['mod'] = mod
+        stats[ability]['modstr'] = f'{mod:+}'
+        
     char['abilities'] = stats 
-    dex_mod = score_mod(stats['dex'])
-    char['ability_mods'] = {k:f'{score_mod(v):+}' for (k,v) in stats.items()}
     (job, weapon, gear, prof) = random.choice(jobs)
 
     if isinstance(weapon, tuple):
@@ -457,24 +470,34 @@ def character():
     char['job'] = job
     char['weapon'] = weapon
     char['weapon_stats'] = weapon_stats.get(weapon, default_weapon)
-    char['gear'] = [gear, random.choice(stuff)]
-    char['ac'] = armor_values.get(gear, 10) + dex_mod
-    char['initiative'] = dex_mod
-    char['hit_points'] = 6 + score_mod(stats['con'])
+
+    gear2 = random.choice(stuff)
+    while gear == gear2:
+        gear2 = random.choice(stuff)
+    
+    char['gear'] = [gear, gear2]
+    char['ac'] = armor_values.get(gear, 10) + stats['dex']['mod']
+    char['initiative'] = stats['dex']['mod']
+    char['hit_points'] = 6 + stats['con']['mod']
     char['hit_dice'] = '1d6'
     
     char['skills'] = {}
-    char['proficiency_bonus'] = proficiency_bonus
-    char['proficiencies'] = {}
+    char['proficiency_bonus'] = {'val': proficiency_bonus, 'valstr': f'{proficiency_bonus:+}'}
     for skill in skill_ability.keys():
-        val = score_mod(char['abilities'][skill_ability[skill]])
+        ability = skill_ability[skill]
+        skillblock = {'ability': ability}
+        val = stats[ability]['mod']
         if skill == prof:
             val += proficiency_bonus
-        char['skills'][skill] = f'{val:+}'
-        char['proficiencies'][skill] = True if skill == prof else False
+        skillblock['val'] = val
+        skillblock['valstr'] = f'{val:+}'
+        skillblock['prof'] = (skill == prof)
+        char['skills'][skill] = skillblock
 
     return char
 
 
 if __name__ == '__main__':
-    print(character())
+    import pprint
+    pp = pprint.PrettyPrinter(indent=2)
+    pp.pprint(character())
