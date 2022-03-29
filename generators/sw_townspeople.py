@@ -335,32 +335,16 @@ weapon_stats = {
     'Spear'       : {'damage': '1d6 p', 'weight': '3', 'properties': 'thrown(20/60), versatile(1d8)'},
     'Staff'       : {'damage': '1d6 b', 'weight': '4', 'properties': 'versatile (1d8)'},
     'Whip'        : {'damage': '1d4 s', 'weight': '3', 'properties': 'finesse, reach'},
-    'Acid splash' : {'damage': '1d6',  'range': '60',  'properties': '1-2 creatures within 5 feet, Dex save'},
-    'Fire bolt'   : {'damage': '1d10', 'range': '120', 'properties': 'Attack roll'},
-    'Ray of frost': {'damage': '1d8',  'range': '60',  'properties': 'Attack roll, -10 feet movement on hit'},
+    'Acid splash' : {'damage': '1d6',   'weight': '-', 'properties': 'range: 60, 1-2 creatures within 5 feet, Dex save'},
+    'Fire bolt'   : {'damage': '1d10',  'weight': '-', 'properties': 'range 120, Attack roll'},
+    'Ray of frost': {'damage': '1d8',   'weight': '-', 'properties': 'range: 60, Attack roll, -10 feet movement on hit'},
 }
 
-
-skills = (
-    'Athletics',
-    'Acrobatics',
-    'Sleight of Hand',
-    'Stealth',
-    'Arcana',
-    'History',
-    'Investigation',
-    'Nature',
-    'Religion',
-    'Animal Handling',
-    'Insight',
-    'Medicine',
-    'Perception',
-    'Survival',
-    'Deception',
-    'Intimidation',
-    'Performance',
-    'Persuasion'
-)
+ranged = [
+    'Longbow',
+    'Shortbow',
+    'Sling',
+]
 
 skill_ability = {
     'Athletics': 'str',
@@ -469,8 +453,35 @@ def character():
                           f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
-    char['weapon_stats'] = weapon_stats.get(weapon, default_weapon)
+    wstats = dict(weapon_stats.get(weapon, default_weapon))
 
+    weapon_ability = 'str'
+    if weapon in cantrip:
+        weapon_ability = 'int'
+    elif weapon in ranged:
+        weapon_ability = 'dex'
+
+    if 'finesse' in wstats['properties']:
+        atk_bonus = max(stats['str']['mod'], stats['dex']['mod']) + proficiency_bonus
+    else:
+        atk_bonus = stats[weapon_ability]['mod'] + proficiency_bonus
+
+    print (wstats)
+    print (atk_bonus)
+
+    wstats['atk_bonus'] = f'{atk_bonus:+}'
+    wstats['name'] = weapon
+    attacks = [wstats]
+    
+    if 'thrown' in wstats['properties']:
+        wstats2 = dict(weapon_stats.get(weapon, default_weapon))
+        wstats2['name'] = f'{weapon} (thrown)'
+        wstats2['atk_bonus'] = f'{(stats["dex"]["mod"] + proficiency_bonus):+}'
+        attacks.append(wstats2)
+        
+    char['attacks'] = attacks
+
+        
     gear2 = random.choice(stuff)
     while gear == gear2:
         gear2 = random.choice(stuff)

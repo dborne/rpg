@@ -43,6 +43,7 @@ titles = (
     '{0} breaker',
     '{0} crusher',
     '{0} cutter',
+    '{0} eater',
     '{0} edge',
     '{0} killer',
     '{0} knife',
@@ -95,6 +96,6 @@ def named_title():
     return titlecase(' '.join((name(), 'the', generate_title())))
     
 if __name__ == '__main__':
-    for x in range(100):
+    for x in range(10):
         print(named_title())
     #print (generate_title())
