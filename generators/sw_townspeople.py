@@ -450,8 +450,10 @@ def character():
     char['race'] = race
     char['size'] = race_traits[race]['size']
     char['speed'] = race_traits[race]['speed']
-    char['description'] = f'a {random.choice(personality)}, {random.choice(appearance)} '\
-                          f'{race} with {random.choice(detail)} and wearing '\
+    pers = random.choice(personality)
+    article = 'an' if pers[0] in 'aeiou' else 'a'
+    char['description'] = f'{article} {pers}, {random.choice(appearance)} '\
+                          f'{race} with {random.choice(detail)} and is wearing '\
                           f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
