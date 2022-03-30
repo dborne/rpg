@@ -1,4 +1,5 @@
 import random
+import textwrap
 
 tool = (
     'axe',
@@ -167,7 +168,8 @@ stuff = (
     'A small piece of parchment',
     'A small bone knife carved with runes',
     'A palm-sized brass coin from a distant Fire Giant city',
-    'A paper napkin with a few stanzas of poetry or a partial diagram of a machine scrawled on it',
+    'A paper napkin with a few stanzas of poetry',
+    'A paper napkin with a diagram of a machine scrawled on it',
     'A piece of chalk',
     'A small crystal',
     'A deck of cards',
@@ -209,29 +211,29 @@ stuff = (
 )
 
 produce = (
-    'a bushel of carrots',
-    'a bushel of corn',
-    'a bushel of parsnips',
-    'a bushel of potatoes',
-    'a bushel of radishes',
-    'a bushel of rice',
-    'a bushel of rutabagas'
-    'a bushel of turnips',
-    'a bushel of wheat',
+    'A bushel of carrots',
+    'A bushel of corn',
+    'A bushel of parsnips',
+    'A bushel of potatoes',
+    'A bushel of radishes',
+    'A bushel of rice',
+    'A bushel of rutabagas'
+    'A bushel of turnips',
+    'A bushel of wheat',
 )
 
 animal = (
-    'a chicken',
-    'a cow',
-    'a dog',
-    'a duck',
-    'a goat',
-    'a goose',
-    'a mule',
-    'an ox',
-    'a pony',
-    'a pig',
-    'a sheep',
+    'A chicken',
+    'A cow',
+    'A dog',
+    'A duck',
+    'A goat',
+    'A goose',
+    'A mule',
+    'An ox',
+    'A pony',
+    'A pig',
+    'A sheep',
 )
 
 cantrip = (
@@ -449,7 +451,7 @@ def character():
     char['size'] = race_traits[race]['size']
     char['speed'] = race_traits[race]['speed']
     char['description'] = f'a {random.choice(personality)}, {random.choice(appearance)} '\
-                          f'{race} with {random.choice(detail)} wearing '\
+                          f'{race} with {random.choice(detail)} and wearing '\
                           f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
@@ -485,6 +487,11 @@ def character():
     gear2 = random.choice(stuff)
     while gear == gear2:
         gear2 = random.choice(stuff)
+
+    if len(gear2) > 40:
+        gearlist = textwrap.wrap(gear2, width=40, subsequent_indent='  ')
+    else:
+        gearlist = [gear2]
     
     char['money'] = {
         'pp': 0,
@@ -497,9 +504,11 @@ def character():
     #TODO: make this more generic
     if gear.endswith('sp'):
         char['money']['sp'] += int(gear.split()[0])
-        char['gear'] = [gear2]
+        char['gear'] = gearlist
     else:
-        char['gear'] = [gear, gear2]
+        gearlist.insert(0, gear)
+        char['gear'] = gearlist
+        
         
     char['ac'] = armor_values.get(gear, 10) + stats['dex']['mod']
     char['initiative'] = stats['dex']['mod']
