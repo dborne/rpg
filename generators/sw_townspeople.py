@@ -246,9 +246,9 @@ jobs = [
     ('Apprentice',          tool, stuff, 'Athletics'),
     ('Armorer',             'Hammer', 'Iron helmet', 'Athletics'),
     ('Artisan',             'Staff', 'Clay', 'Perception'),
-    ('Astrologer',          'Dagger', 'Spyglass', 'Nature'),
+    ('Astrologer',          'Dagger', 'A spyglass', 'Nature'),
     ('Barber',              'Straight razor', 'Bandages', 'Medicine'),
-    ('Barkeep',             tool, 'bottle of spirits', 'Insight'),
+    ('Barkeep',             tool, 'A bottle of spirits', 'Insight'),
     ('Blacksmith',          'Hammer', 'Steel tongs', 'Athletics'),
     ('Bowyer',              'Longbow', '20 arrows', 'Perception'),
     ('Caravan guard',       'Short sword', 'Padded armor', 'Survival'), 
@@ -261,17 +261,17 @@ jobs = [
     ('Ditch digger',        'Shovel', stuff, 'Athletics'),
     ('Drifter',             'Sling', stuff, 'Investigation'),
     ('Farmer',              tool,  animal, 'Animal Handling'),
-    ('Farrier',             'Hammer', 'pliers', 'Animal Handling'),
+    ('Farrier',             'Hammer', 'Pliers', 'Animal Handling'),
     ('Forester',            'Shortbow', 'Herbs', 'Nature'),
     ('Fortune-teller',      'Dagger', 'Tarot deck', 'Performance'),
     ('Gambler',             'Sap', 'Dice', 'Sleight of Hand'),
     ('Gongfarmer',          tool, 'Sack of night soil', 'Athletics'),
     ('Grave digger',        'Shovel', stuff, 'Athletics'),
-    ('Groom',               'Whip', 'saddle horse', 'Animal Handling'),
+    ('Groom',               'Whip', 'Saddle horse', 'Animal Handling'),
     ('Guard',               'Spear', 'Shield', 'Intimidation'),
     ('Guild beggar',        'Sling', 'Crutches', 'Deception'),
-    ('Healer',              'Club', 'Vial of Holy water', 'Medicine'),
-    ('Hedge Witch',         'Knife', 'healing herbs', 'Nature'),
+    ('Healer',              'Club', 'Vial of holy water', 'Medicine'),
+    ('Hedge Witch',         'Knife', 'Healing herbs', 'Nature'),
     ('Herbalist',           tool, 'Herbs', 'Nature'),
     ('Herder',              'Staff', 'Herding dog', 'Animal Handling'),
     ('Hunter',              'Shortbow', 'Deer pelt', 'Stealth'),
@@ -292,18 +292,18 @@ jobs = [
     ('Outlaw',              'Short sword', 'Leather tunic', 'Deception'),
     ('Rat Catcher',         'Club', 'Small dog', 'Animal Handling'),
     ('Sage',                'Dagger', 'Notebook and pencils', 'History'),
-    ('Scribe',              'Darts', 'Parchment, quill pen and ink', 'Investigation'),
+    ('Scribe',              'Darts', 'Parchment, Quill pen and ink', 'Investigation'),
     ('Shaman',              tool, 'Herbs', 'Religion'),
     ('Smuggler',            'Sling', 'Waterproof sack', 'Stealth'),
     ('Squire',              'Short sword', 'Iron helmet', 'Athletics'),
-    ('Tanner',              'Knife', 'waterproof bag', 'Athletics'),
+    ('Tanner',              'Knife', 'Waterproof bag', 'Athletics'),
     ('Trader',              'Short sword', '20 sp', 'Persuasion'),
     ('Trapper',             'Sling', 'Badger pelt', 'Survival'),
     ('Urchin',              'Stick', 'Begging bowl', 'Stealth'),
     ('Vagrant',             'Club', 'Begging bowl', 'Deception'),
     ('Wainwright',          tool, 'Pushcart', 'Athletics'),
     ('Weaver',              'Dagger', 'Fine suit of clothes', 'Perception'),
-    ('Wizard\'s apprentice', cantrip, 'spellbook', 'Arcana'),
+    ('Wizard\'s apprentice', cantrip, 'Spellbook', 'Arcana'),
     ('Woodcutter',          'Axe', 'Bundle of wood', 'Athletics')
 ]
 
@@ -486,7 +486,21 @@ def character():
     while gear == gear2:
         gear2 = random.choice(stuff)
     
-    char['gear'] = [gear, gear2]
+    char['money'] = {
+        'pp': 0,
+        'gp': 0,
+        'ep': 0,
+        'sp': 0,
+        'cp': random.randrange(10,20)
+    }
+    
+    #TODO: make this more generic
+    if gear.endswith('sp'):
+        char['money']['sp'] += int(gear.split()[0])
+        char['gear'] = [gear2]
+    else:
+        char['gear'] = [gear, gear2]
+        
     char['ac'] = armor_values.get(gear, 10) + stats['dex']['mod']
     char['initiative'] = stats['dex']['mod']
     char['hit_points'] = 6 + stats['con']['mod']
@@ -504,6 +518,7 @@ def character():
         skillblock['valstr'] = f'{val:+}'
         skillblock['prof'] = (skill == prof)
         char['skills'][skill] = skillblock
+
 
     return char
 
