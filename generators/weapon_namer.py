@@ -40,39 +40,39 @@ targets = (
 )
 
 titles = (
-    '{0} breaker',
-    '{0} crusher',
-    '{0} cutter',
-    '{0} eater',
-    '{0} edge',
-    '{0} killer',
-    '{0} knife',
-    '{0} piercer',
-    '{0} poker',
-    '{0} reaper',
-    '{0} slayer',
-    '{0} smasher',
-    '{0} splitter',
-    '{0} stabber',
-    '{1} bane',
-    '{1} blade',
-    '{1} end',
-    '{1} glory',
-    '{1} heart',
-    '{1} knife',
-    '{1} might',
-    'bane of {2}',
-    'blade of {2}',
-    'breath of {2}',
-    'defender of {2}',
-    'glory of {2}',
-    'hammer of {2}',
-    'knife of {2}',
-    'might of {2}',
-    'spirit of {2}',
-    'soul of {2}',
-    'tear of {2}',
-    'wind of {2}',
+    ('{0} breaker',     {'b', 'm'}),
+    ('{0} crusher',     {'b'}),
+    ('{0} cutter',      {'s'}),
+    ('{0} eater',       {'b', 'p', 'm', 's'}),
+    ('{0} edge',        {'s'}),
+    ('{0} killer',      {'b', 'p', 'm', 's'}),
+    ('{0} knife',       {'p', 's'}),
+    ('{0} piercer',     {'p'}),
+    ('{0} poker',       {'p'}),
+    ('{0} reaper',      {'b', 'p', 'm', 's'}),
+    ('{0} slayer',      {'b', 'p', 'm', 's'}),
+    ('{0} smasher',     {'b', 'm'}),
+    ('{0} splitter',    {'s', 'm'}),
+    ('{0} stabber',     {'p'}),
+    ('{1} bane',        {'b', 'p', 'm', 's'}),
+    ('{1} blade',       {'b', 'p'}),
+    ('{1} end',         {'b', 'p', 'm', 's'}),
+    ('{1} glory',       {'b', 'p', 'm', 's'}),
+    ('{1} heart',       {'b', 'p', 'm', 's'}),
+    ('{1} knife',       {'p', 's'}),
+    ('{1} might',       {'b', 'p', 'm', 's'}),
+    ('bane of {2}',     {'b', 'p', 'm', 's'}),
+    ('blade of {2}',    {'p', 's'}),
+    ('breath of {2}',   {'b', 'p', 'm', 's'}),
+    ('defender of {2}', {'b', 'p', 'm', 's'}),
+    ('glory of {2}',    {'b', 'p', 'm', 's'}),
+    ('hammer of {2}',   {'b'}),
+    ('knife of {2}',    {'p', 's'}),
+    ('might of {2}',    {'b', 'p', 'm', 's'}),
+    ('spirit of {2}',   {'b', 'p', 'm', 's'}),
+    ('soul of {2}',     {'b', 'p', 'm', 's'}),
+    ('tear of {2}',     {'b', 'p', 'm', 's'}),
+    ('wind of {2}',     {'b', 'p', 'm', 's'}),
 )
 
 def titlecase(title):
@@ -89,13 +89,21 @@ def name():
     name2 = new_word(hash, start, 6, 10)
     return titlecase(' '.join((name1, name2)))
 
-def generate_title():
-    return random.choice(titles).format(*random.choice(targets))
+def generate_title(damtypes='pbsm'):
+    damset = set(damtypes)
+    options = [title[0] for title in titles if 
+                    len(title[1].intersection(damset)) > 0 ]
+    
+    return random.choice(options).format(*random.choice(targets))
 
 def named_title():
     return titlecase(' '.join((name(), 'the', generate_title())))
     
+def title_gen(damtypes='pbsm'):
+    while (1):
+        yield titlecase(' '.join((name(), 'the', generate_title(damtypes))))
+        
 if __name__ == '__main__':
+    title = title_gen(damtypes='b')
     for x in range(10):
-        print(named_title())
-    #print (generate_title())
+        print(next(title))
