@@ -13,9 +13,10 @@ def lambda_handler(event, context):
     
     if path.lower() == 'weapon':
         count = 1
+        dam = 'pbsm'
         if params:
             count = int(params.get('count', '1'))
-            dam = params,get('damage_types', 'pbsm')
+            dam = params.get('damage_types', 'pbsm')
         title = weapon_namer.title_gen(damtypes=dam)
         res = [next(title) for x in range(count)]
         status = '200'
