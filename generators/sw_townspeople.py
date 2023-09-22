@@ -51,40 +51,48 @@ appearance = (
     'wrinkled',
 )
 
-detail =  (
-    'a birthmark',
-    'braided hair',
-    'a broken nose',
-    'bronze skin',
-    'bushy eyebrows',
-    'curly hair',
-    'dark skin',
-    'a deep voice',
-    'dreadlocks',
-    'an exotic accent',
-    'freckles',
-    'a gravelly voice',
-    'a gold tooth',
-    'a hoarse voice',
-    'a huge beard',
-    'light skin',
-    'long hair',
-    'matted hair',
-    'missing teeth',
-    'a mustache',
-    'mutton chops',
-    'nine fingers',
-    'oiled hair',
-    'one eye',
-    'pale skin',
-    'piercings',
-    'sallow skin',
-    'scars',
-    'a shaved head',
-    'a sunburn',
-    'tangled hair',
-    'tattoos',
-    'a topknot',
+details =  (
+    {'default': 'a birthmark',},
+    {'default': 'a neat appearance', 'fur': 'braided hair', 'scales': 'lined scales', 'feathers': 'lined feathers',},
+    {'default': 'a broken nose',},
+    {'default': 'a bronze complexion', 'fur': 'bronze skin', 'scales': 'bronze scales', 'feathers': 'golden feathers', 'skin': 'bronze skin', 'mechanical': 'bronze plating'},
+    {'default': 'a prominent brow', 'fur': 'bushy eyebrows',},
+    {'default': 'a dark complexion', 'fur': 'curly hair', 'scales': 'patterned scales', 'feathers': 'striped wings', 'skin': 'tattooed arms'},
+    {'default': 'dark skin', 'scales': 'dark scales', 'feathers': 'dark feathers', 'mechanical': 'dark plating'},
+    {'default': 'a deep voice',},
+    {'default': 'a high-pitched voice',},
+    {'default': 'a rough complexion', 'fur': 'dreadlocks', 'scales': 'ridged scales', 'feathers': 'sleek feathers', 'skin': 'smooth skin'},
+    {'default': 'an exotic accent',},
+    {'default': 'freckles',},
+    {'default': 'a gravelly voice',},
+    {'default': 'a melodious voice',},
+    {'default': 'a gold tooth',},
+    {'default': 'a hoarse voice',},
+    {'default': 'a pronounced chin', 'fur': 'a huge beard', 'feathers': 'a large beak'},
+    {'default': 'light skin', 'scales': 'pale shiny scales', 'feathers': 'faded plumage'},
+    {'default': 'a long face', 'fur': 'long hair', 'scales': 'bright scales', 'feathers': 'graceful plumage', 'skin': 'leathery skin'},
+    {'default': 'a dirty countenance', 'fur': 'matted hair', 'scales': 'dull scales', 'feathers': 'dusty feathers', 'skin': 'dry skin'},
+    {'default': 'missing teeth', 'feathers': 'a chipped beak', 'mechanical': 'a damaged faceplate'},
+    {'default': 'old eyes', 'fur': 'mutton chops'},
+    {'default': 'nine fingers',},
+    {'default': 'oily skin', 'fur': 'oiled hair', 'scales': 'oily scales', 'feathers': 'greasy feathers', 'skin': 'greasy skin'},
+    {'default': 'one eye',},
+    {'default': 'shifty eyes',},
+    {'default': 'piercing eyes',},
+    {'default': 'dark eyes',},
+    {'default': 'a pale complexion', 'fur': 'pale skin', 'scales': 'pale scales', 'feathers': 'pale feathers', 'skin': 'pale skin'},
+    {'default': 'piercings',},
+    {'default': 'a pale complexion', 'fur': 'sallow skin', 'scales': 'blotchy scales', 'feathers': 'patchy feathers', 'skin': 'sallow skin'},
+    {'default': 'scars',},
+    {'default': 'an oddly shaped head', 'fur': 'a shaved head', 'scales': 'a ridge of scales on their head', 'feathers': 'a molting head', 'skin': 'a shiny bald head'},
+    {'default': 'a sunburn', 'mechanical': 'soot stains'},
+    {'default': 'a messy demeanor',  'fur': 'tangled hair', 'scales': 'missing scales', 'feathers': 'molting wings', 'skin': 'a blotchy complexion'},
+    {'default': 'tattoos', 'mechanical': 'fine linework on their chassis'},
+    {'default': 'an interesting hat', 'fur': 'a topknot', 'feathers': 'an impressive feather crest'},
+    {'default': 'a long nose', 'feathers': 'a long beak'},
+    {'default': 'a well-muscled build',},
+    {'default': 'a pudgy body',},
+    {'default': 'long fingers',},
 )
 
 clothing = (
@@ -98,7 +106,7 @@ clothing = (
     'exotic',
     'fashionable',
     'flamboyant',
-    'food-stained',
+    'stained',
     'formal',
     'frayed',
     'frumpy',
@@ -114,44 +122,104 @@ clothing = (
     'singed',
     'tasteless',
     'torn',
-    'undersized',
+    'ill-fitting',
     'wine-stained',
     'worn out',
 )
 
 personality = (
+    'absent-minded',
+    'ambitious',
+    'angry',
+    'awkward',
     'bitter',
+    'bland',
+    'blunt',
     'brave',
+    'bureaucratic',
     'cautious',
+    'charming',
     'chipper',
+    'cold',
+    'conceited',
+    'confident',
     'contrary',
     'cowardly',
     'cunning',
+    'curious',
+    'diplomatic',
     'driven',
+    'dull',
+    'eager',
+    'easy-going',
+    'eloquent',
+    'energetic',
+    'enigmatic',
     'entitled',
+    'excited',
+    'fearful',
+    'flamboyant',
+    'foolish',
+    'friendly',
+    'greedy',
     'gregarious',
+    'gruff',
     'grumpy',
+    'honest',
     'hotheaded',
     'inquisitive',
+    'intimidating',
+    'inventive',
+    'irresponsible',
     'jolly',
+    'kind',
     'lazy',
+    'loud',
     'loyal',
     'menacing',
+    'miserly',
     'mopey',
+    'narcissistic',
     'nervous',
+    'officious',
+    'overconfident',
+    'paranoid',
+    'perky',
+    'petulant',
+    'pretentious',
     'protective',
+    'quiet',
+    'rational',
+    'reckless',
+    'resourceful',
+    'respectable',
     'righteous',
     'rude',
+    'rugged',
     'sarcastic',
     'savage',
+    'selfish',
     'scheming',
     'serene',
+    'sleepy',
+    'slick',
+    'smug',
     'spacey',
     'stoic',
     'stubborn',
     'stuck-up',
+    'surly',
     'suspicious',
-    'wisecracking'
+    'taciturn',
+    'uncouth',
+    'unkempt',
+    'vacuous',
+    'violent',
+    'wary',
+    'weird',
+    'wise',
+    'wisecracking',
+    'witty',
 )
 
 stuff = (
@@ -242,72 +310,72 @@ cantrip = (
     'ray of frost',
 )
 
-jobs = [
-    ('alchemist',           'staff', 'Oil - 1 flask', 'Arcana'),
-    ('animal trainer',      tool, animal, 'Animal Handling'),
-    ('apprentice',          tool, stuff, 'Athletics'),
-    ('armorer',             'hammer', 'Iron helmet', 'Athletics'),
-    ('artisan',             'staff', 'Clay', 'Perception'),
-    ('astrologer',          'dagger', 'A spyglass', 'Nature'),
-    ('barber',              'straight razor', 'Bandages', 'Medicine'),
-    ('barkeep',             tool, 'A bottle of spirits', 'Insight'),
-    ('blacksmith',          'hammer', 'Steel tongs', 'Athletics'),
-    ('bowyer',              'longbow', '20 arrows', 'Perception'),
-    ('caravan guard',       'short sword', 'Padded armor', 'Survival'),
-    ('carpenter',           'hammer', 'Nails', 'Perception'),
-    ('cobbler',             'awl', 'Shoehorn', 'Perception'),
-    ('confidence artist',   'dagger', 'Quality cloak', 'Deception'),
-    ('cook',                'meat cleaver', 'Fresh meat', 'Survival'),
-    ('cooper',              'crowbar', 'Barrel', 'Perception'),
-    ('cutpurse',            'dagger', stuff, 'Sleight of Hand'),
-    ('ditch digger',        'shovel', stuff, 'Athletics'),
-    ('drifter',             'sling', stuff, 'Investigation'),
-    ('farmer',              tool,  animal, 'Animal Handling'),
-    ('farrier',             'hammer', 'Pliers', 'Animal Handling'),
-    ('forester',            'shortbow', 'Herbs', 'Nature'),
-    ('fortune-teller',      'dagger', 'Tarot deck', 'Performance'),
-    ('gambler',             'sap', 'Dice', 'Sleight of Hand'),
-    ('gongfarmer',          tool, 'Sack of night soil', 'Athletics'),
-    ('grave digger',        'shovel', stuff, 'Athletics'),
-    ('groom',               'whip', 'saddle horse', 'Animal Handling'),
-    ('guard',               'spear', 'shield', 'Intimidation'),
-    ('guild beggar',        'sling', 'Crutches', 'Deception'),
-    ('healer',              'club', 'Vial of holy water', 'Medicine'),
-    ('hedge witch',         'knife', 'Healing herbs', 'Nature'),
-    ('herbalist',           tool, 'Herbs', 'Nature'),
-    ('herder',              'staff', 'Herding dog', 'Animal Handling'),
-    ('hunter',              'shortbow', 'Deer pelt', 'Stealth'),
-    ('indentured servant',  'staff', stuff, 'Athletics'),
-    ('innkeeper',           'club', stuff, 'Insight'),
-    ('jester',              'darts', 'Silk clothes', 'Performance'),
-    ('jeweler',             'fine dagger', 'Gem worth 20 gp', 'Perception'),
-    ('locksmith',           'dagger', 'Fine tools', 'Perception'),
-    ('mason',               tool, stuff, 'Athletics'),
-    ('mayor',               'mace', stuff, 'Persuasion'),
-    ('mercenary',           'longsword', 'Hide armor', 'Survival'),
-    ('merchant',            'dagger', stuff, 'Persuasion'),
-    ('miller/baker',        'rolling pin', 'Flour - 1 lb', 'Athletics'),
-    ('miner',               'pick', 'Lantern', 'Athletics'),
-    ('minstrel',            'dagger', 'Lyre', 'Performance'),
-    ('noble',               'longsword', 'Gold signet ring', 'History'),
-    ('orphan',              'club', 'Rag doll', 'Stealth'),
-    ('outlaw',              'short sword', 'Leather tunic', 'Deception'),
-    ('rat catcher',         'club', 'Small dog', 'Animal Handling'),
-    ('sage',                'dagger', 'Notebook and pencils', 'History'),
-    ('scribe',              'darts', 'Parchment, Quill pen and ink', 'Investigation'),
-    ('shaman',              tool, 'Herbs', 'Religion'),
-    ('smuggler',            'sling', 'Waterproof sack', 'Stealth'),
-    ('squire',              'short sword', 'Iron helmet', 'Athletics'),
-    ('tanner',              'knife', 'Waterproof bag', 'Athletics'),
-    ('trader',              'short sword', '20 sp', 'Persuasion'),
-    ('trapper',             'sling', 'Badger pelt', 'Survival'),
-    ('urchin',              'stick', 'Begging bowl', 'Stealth'),
-    ('vagrant',             'club', 'Begging bowl', 'Deception'),
-    ('wainwright',          tool, 'Pushcart', 'Athletics'),
-    ('weaver',              'dagger', 'Fine suit of clothes', 'Perception'),
-    ('wizard\'s apprentice', cantrip, 'Spellbook', 'Arcana'),
-    ('woodcutter',          'axe', 'Bundle of wood', 'Athletics')
-]
+jobs = {
+    'alchemist':           ('staff', 'Oil - 1 flask', 'Arcana'),
+    'animal trainer':      (tool, animal, 'Animal Handling'),
+    'apprentice':          (tool, stuff, 'Athletics'),
+    'armorer':             ('hammer', 'Iron helmet', 'Athletics'),
+    'artisan':             ('staff', 'Clay', 'Perception'),
+    'astrologer':          ('dagger', 'A spyglass', 'Nature'),
+    'barber':              ('straight razor', 'Bandages', 'Medicine'),
+    'barkeep':             (tool, 'A bottle of spirits', 'Insight'),
+    'blacksmith':          ('hammer', 'Steel tongs', 'Athletics'),
+    'bowyer':              ('longbow', '20 arrows', 'Perception'),
+    'caravan guard':       ('short sword', 'Padded armor', 'Survival'),
+    'carpenter':           ('hammer', 'Nails', 'Perception'),
+    'cobbler':             ('awl', 'Shoehorn', 'Perception'),
+    'confidence artist':   ('dagger', 'Quality cloak', 'Deception'),
+    'cook':                ('meat cleaver', 'Fresh meat', 'Survival'),
+    'cooper':              ('crowbar', 'Barrel', 'Perception'),
+    'cutpurse':            ('dagger', stuff, 'Sleight of Hand'),
+    'ditch digger':        ('shovel', stuff, 'Athletics'),
+    'drifter':             ('sling', stuff, 'Investigation'),
+    'farmer':              (tool,  animal, 'Animal Handling'),
+    'farrier':             ('hammer', 'Pliers', 'Animal Handling'),
+    'forester':            ('shortbow', 'Herbs', 'Nature'),
+    'fortune-teller':      ('dagger', 'Tarot deck', 'Performance'),
+    'gambler':             ('sap', 'Dice', 'Sleight of Hand'),
+    'gongfarmer':          (tool, 'Sack of night soil', 'Athletics'),
+    'grave digger':        ('shovel', stuff, 'Athletics'),
+    'groom':               ('whip', 'saddle horse', 'Animal Handling'),
+    'guard':               ('spear', 'shield', 'Intimidation'),
+    'guild beggar':        ('sling', 'Crutches', 'Deception'),
+    'healer':              ('club', 'Vial of holy water', 'Medicine'),
+    'hedge witch':         ('knife', 'Healing herbs', 'Nature'),
+    'herbalist':           (tool, 'Herbs', 'Nature'),
+    'herder':              ('staff', 'Herding dog', 'Animal Handling'),
+    'hunter':              ('shortbow', 'Deer pelt', 'Stealth'),
+    'indentured servant':  ('staff', stuff, 'Athletics'),
+    'innkeeper':           ('club', stuff, 'Insight'),
+    'jester':              ('darts', 'Silk clothes', 'Performance'),
+    'jeweler':             ('fine dagger', 'Gem worth 20 gp', 'Perception'),
+    'locksmith':           ('dagger', 'Fine tools', 'Perception'),
+    'mason':               (tool, stuff, 'Athletics'),
+    'mayor':               ('mace', stuff, 'Persuasion'),
+    'mercenary':           ('longsword', 'Hide armor', 'Survival'),
+    'merchant':            ('dagger', stuff, 'Persuasion'),
+    'miller/baker':        ('rolling pin', 'Flour - 1 lb', 'Athletics'),
+    'miner':               ('pick', 'Lantern', 'Athletics'),
+    'minstrel':            ('dagger', 'Lyre', 'Performance'),
+    'noble':               ('longsword', 'Gold signet ring', 'History'),
+    'orphan':              ('club', 'Rag doll', 'Stealth'),
+    'outlaw':              ('short sword', 'Leather tunic', 'Deception'),
+    'rat catcher':         ('club', 'Small dog', 'Animal Handling'),
+    'sage':                ('dagger', 'Notebook and pencils', 'History'),
+    'scribe':              ('darts', 'Parchment, Quill pen and ink', 'Investigation'),
+    'shaman':              (tool, 'Herbs', 'Religion'),
+    'smuggler':            ('sling', 'Waterproof sack', 'Stealth'),
+    'squire':              ('short sword', 'Iron helmet', 'Athletics'),
+    'tanner':              ('knife', 'Waterproof bag', 'Athletics'),
+    'trader':              ('short sword', '20 sp', 'Persuasion'),
+    'trapper':             ('sling', 'Badger pelt', 'Survival'),
+    'urchin':              ('stick', 'Begging bowl', 'Stealth'),
+    'vagrant':             ('club', 'Begging bowl', 'Deception'),
+    'wainwright':          (tool, 'Pushcart', 'Athletics'),
+    'weaver':              ('dagger', 'Fine suit of clothes', 'Perception'),
+    'wizard\'s apprentice':(cantrip, 'Spellbook', 'Arcana'),
+    'woodcutter':          ('axe', 'Bundle of wood', 'Athletics')
+}
 
 armor_values = {
     'Iron helmet'   : 11,
@@ -370,54 +438,75 @@ skill_ability = {
 }
 
 available_races = (
-    'Dragonborn',
-    'Dwarf',
-    'Elf',
-    'Gnome',
-    'Half-Elf',
-    'Half-Orc',
-    'Halfling',
-    'Human',
-    'Tiefling',
+    'aarakocra',
+    'dragonborn',
+    'dwarf',
+    'elf',
+    'gnome',
+    'half-elf',
+    'half-orc',
+    'halfling',
+    'human',
+    'kenku',
+    'kobold',
+    'tiefling',
 )
 
 race_traits = {
-    'Aarakocra'    : {'languages': 'Common, Aarakocra, Auran',  'size': 'Medium', 'speed':25},
-    'Aasimar'      : {'languages': 'Common, Celestial',         'size': 'Medium', 'speed':30},
-    'Bugbear'      : {'languages': 'Common, Goblin',            'size': 'Medium', 'speed':30},
-    'Centaur'      : {'languages': 'Common, Sylvan',            'size': 'Medium', 'speed':40},
-    'Changeling'   : {'languages': 'Common, 2',                 'size': 'Medium', 'speed':30},
-    'Dragonborn'   : {'languages': 'Common, Draconic',          'size': 'Medium', 'speed':30},
-    'Dwarf'        : {'languages': 'Common, Dwarf',             'size': 'Medium', 'speed':25},
-    'Elf'          : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30},
-    'Firbolg'      : {'languages': 'Common, Elvish, Giant',     'size': 'Medium', 'speed':30},
-    'Genasi'       : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30},
-    'Gith'         : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30},
-    'Gnome'        : {'languages': 'Common, Gnomish',           'size': 'Small' , 'speed':25},
-    'Goblin'       : {'languages': 'Common, Goblin',            'size': 'Small' , 'speed':30},
-    'Goliath'      : {'languages': 'Common, Giant',             'size': 'Medium', 'speed':30},
-    'Halfling'     : {'languages': 'Common, Halfling',          'size': 'Small' , 'speed':25},
-    'Half-Elf'     : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30},
-    'Half-Orc'     : {'languages': 'Common, Orc',               'size': 'Medium', 'speed':30},
-    'Hobgoblin'    : {'languages': 'Common, Goblin',            'size': 'Medium', 'speed':30},
-    'Human'        : {'languages': 'Common, 1',                 'size': 'Medium', 'speed':30},
-    'Kalashtar'    : {'languages': 'Common, Quori, 1',          'size': 'Medium', 'speed':30},
-    'Kenku'        : {'languages': 'Common, Auran ',            'size': 'Medium', 'speed':30},
-    'Kobold'       : {'languages': 'Common, Draconic',          'size': 'Small' , 'speed':30},
-    'Lizardfolk'   : {'languages': 'Common, Draconic',          'size': 'Medium', 'speed':30},
-    'Loxodon'      : {'languages': 'Common, Loxodon',           'size': 'Medium', 'speed':30},
-    'Minotaur'     : {'languages': 'Common, Minotaur',          'size': 'Medium', 'speed':30},
-    'Orc'          : {'languages': 'Common, Orc',               'size': 'Medium', 'speed':30},
-    'Shifter'      : {'languages': 'Common',                    'size': 'Medium', 'speed':30},
-    'Simic Hybrid' : {'languages': 'Common, Elvish/Vedalken',   'size': 'Medium', 'speed':30},
-    'Tabaxi'       : {'languages': 'Common, 1',                 'size': 'Medium', 'speed':30},
-    'Tiefling'     : {'languages': 'Common, Infernal',          'size': 'Medium', 'speed':30},
-    'Tortle'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30},
-    'Triton'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30},
-    'Vedalken'     : {'languages': 'Common, Vedalken, 1',       'size': 'Medium', 'speed':30},
-    'Warforged'    : {'languages': 'Common',                    'size': 'Medium', 'speed':30},
-    'Yuan-Ti'      : {'languages': 'Common, Abyssal, Draconic', 'size': 'Medium', 'speed':30},
+    'aarakocra'    : {'languages': 'Common, Aarakocra, Auran',  'size': 'Medium', 'speed':30, 'skin': 'feathers'  },
+    'aasimar'      : {'languages': 'Common, Celestial',         'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'air Genasi'   : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'bugbear'      : {'languages': 'Common, Goblin',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'centaur'      : {'languages': 'Common, Sylvan',            'size': 'Medium', 'speed':40, 'skin': 'fur'       },
+    'changeling'   : {'languages': 'Common, 2',                 'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'dragonborn'   : {'languages': 'Common, Draconic',          'size': 'Medium', 'speed':30, 'skin': 'scales'    },
+    'dwarf'        : {'languages': 'Common, Dwarf',             'size': 'Medium', 'speed':25, 'skin': 'fur'       },
+    'earth Genasi' : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'eladrin'      : {'languages': 'Common, Sylvan',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'elf'          : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'fairy'        : {'languages': 'Common, Sylvan',            'size': 'Small' , 'speed':30, 'skin': 'fur'       },
+    'firbolg'      : {'languages': 'Common, Elvish, Giant',     'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'fire Genasi'  : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'githyanki'    : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'Githzerai'    : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'gnome'        : {'languages': 'Common, Gnomish',           'size': 'Small' , 'speed':25, 'skin': 'fur'       },
+    'goblin'       : {'languages': 'Common, Goblin',            'size': 'Small' , 'speed':30, 'skin': 'fur'       },
+    'goliath'      : {'languages': 'Common, Giant',             'size': 'Medium', 'speed':30, 'skin': 'skin'      },
+    'halfling'     : {'languages': 'Common, Halfling',          'size': 'Small' , 'speed':25, 'skin': 'fur'       },
+    'half-elf'     : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'half-orc'     : {'languages': 'Common, Orc',               'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'harengon'     : {'languages': 'Common, 1'  ,               'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'hobgoblin'    : {'languages': 'Common, Goblin',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'human'        : {'languages': 'Common, 1',                 'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'kalashtar'    : {'languages': 'Common, Quori, 1',          'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'kenku'        : {'languages': 'Common, Auran ',            'size': 'Medium', 'speed':30, 'skin': 'feathers'  },
+    'kobold'       : {'languages': 'Common, Draconic',          'size': 'Small' , 'speed':30, 'skin': 'scales'    },
+    'lizardfolk'   : {'languages': 'Common, Draconic',          'size': 'Medium', 'speed':30, 'skin': 'scales'    },
+    'loxodon'      : {'languages': 'Common, Loxodon',           'size': 'Medium', 'speed':30, 'skin': 'skin'      },
+    'minotaur'     : {'languages': 'Common, Minotaur',          'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'orc'          : {'languages': 'Common, Orc',               'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'shifter'      : {'languages': 'Common',                    'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'simic hybrid' : {'languages': 'Common, Elvish/Vedalken',   'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'tabaxi'       : {'languages': 'Common, 1',                 'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'tiefling'     : {'languages': 'Common, Infernal',          'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'tortle'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30, 'skin': 'skin'      },
+    'triton'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'vedalken'     : {'languages': 'Common, Vedalken, 1',       'size': 'Medium', 'speed':30, 'skin': 'mechanical'},
+    'warforged'    : {'languages': 'Common',                    'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'water genasi' : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'other'     },
+    'yuan-Ti'      : {'languages': 'Common, Abyssal, Draconic', 'size': 'Medium', 'speed':30, 'skin': 'scales'    },
 }
+
+def description(race):
+    pers = random.choice(personality)
+    article = 'an' if pers[0] in 'aeiou' else 'a'
+
+    detail_option = random.choice(details)
+    detail = detail_option.get(race_traits[race]['skin'], detail_option['default'])
+
+    return f'{article} {pers}, {random.choice(appearance)} '\
+        f'{race} with {detail} and is wearing '\
+        f'{random.choice(clothing)} clothes.'
 
     
 def statblock():
@@ -429,7 +518,11 @@ proficiency_bonus = 1
 score_mod = lambda x: x//2 - 5
 # don't forget '{0:+}'.format(value) to get leading +
 
-def character():
+def character(races=None, classes=None ):
+    if races is None:
+        races = available_races
+    if classes is None:
+        classes = list(jobs.keys())
     char = {}
     stats = statblock()
     for ability in stats.keys():
@@ -437,8 +530,9 @@ def character():
         stats[ability]['mod'] = mod
         stats[ability]['modstr'] = f'{mod:+}'
         
-    char['abilities'] = stats 
-    (job, weapon, gear, prof) = random.choice(jobs)
+    char['abilities'] = stats
+    job = random.choice(classes)
+    (weapon, gear, prof) = jobs[job]
 
     if isinstance(weapon, tuple):
         weapon = random.choice(weapon)
@@ -446,15 +540,11 @@ def character():
     if isinstance(gear, tuple):
         gear = random.choice(gear)
 
-    race = random.choice(available_races)
+    race = random.choice(races)
+    char['description'] = description(race)
     char['race'] = race
     char['size'] = race_traits[race]['size']
     char['speed'] = race_traits[race]['speed']
-    pers = random.choice(personality)
-    article = 'an' if pers[0] in 'aeiou' else 'a'
-    char['description'] = f'{article} {pers}, {random.choice(appearance)} '\
-                          f'{race} with {random.choice(detail)} and is wearing '\
-                          f'{random.choice(clothing)} clothes.'
     char['job'] = job
     char['weapon'] = weapon
     wstats = dict(weapon_stats.get(weapon, default_weapon))
@@ -473,6 +563,7 @@ def character():
     wstats['atk_bonus'] = f'{atk_bonus:+}'
     wstats['name'] = weapon
     attacks = [wstats]
+
     
     if 'thrown' in wstats['properties']:
         wstats2 = dict(weapon_stats.get(weapon, default_weapon))
