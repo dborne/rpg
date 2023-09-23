@@ -306,8 +306,15 @@ animal = (
 
 cantrip = (
     'acid splash',
+    'blade ward',
     'fire bolt',
+    'guidance',
+    'light',
+    'magic stone',
+    'produce flame',
     'ray of frost',
+    'shocking grasp',
+    'true strike',
 )
 
 jobs = {
@@ -333,7 +340,7 @@ jobs = {
     'farmer':              (tool,  animal, 'Animal Handling'),
     'farrier':             ('hammer', 'Pliers', 'Animal Handling'),
     'forester':            ('shortbow', 'Herbs', 'Nature'),
-    'fortune-teller':      ('dagger', 'Tarot deck', 'Performance'),
+    'fortune-teller':      (('guidance', 'true strike'), 'Tarot deck', 'Performance'),
     'gambler':             ('sap', 'Dice', 'Sleight of Hand'),
     'gongfarmer':          (tool, 'Sack of night soil', 'Athletics'),
     'grave digger':        ('shovel', stuff, 'Athletics'),
@@ -341,7 +348,7 @@ jobs = {
     'guard':               ('spear', 'shield', 'Intimidation'),
     'guild beggar':        ('sling', 'Crutches', 'Deception'),
     'healer':              ('club', 'Vial of holy water', 'Medicine'),
-    'hedge witch':         ('knife', 'Healing herbs', 'Nature'),
+    'hedge witch':         ('magic stone', 'Healing herbs', 'Nature'),
     'herbalist':           (tool, 'Herbs', 'Nature'),
     'herder':              ('staff', 'Herding dog', 'Animal Handling'),
     'hunter':              ('shortbow', 'Deer pelt', 'Stealth'),
@@ -363,7 +370,7 @@ jobs = {
     'rat catcher':         ('club', 'Small dog', 'Animal Handling'),
     'sage':                ('dagger', 'Notebook and pencils', 'History'),
     'scribe':              ('darts', 'Parchment, Quill pen and ink', 'Investigation'),
-    'shaman':              (tool, 'Herbs', 'Religion'),
+    'shaman':              (cantrip, 'Herbs', 'Religion'),
     'smuggler':            ('sling', 'Waterproof sack', 'Stealth'),
     'squire':              ('short sword', 'Iron helmet', 'Athletics'),
     'tanner':              ('knife', 'Waterproof bag', 'Athletics'),
@@ -387,27 +394,36 @@ armor_values = {
 
 default_weapon = {'damage': '1d4', 'weight': '1lb', 'properties': 'improvised, thrown(20/60)'}
 weapon_stats = {
-    'axe'         : {'damage': '1d6 s', 'weight': '4', 'properties': 'versatile (1d8)'},
-    'club'        : {'damage': '1d4 b', 'weight': '2', 'properties': 'light'},
-    'dagger'      : {'damage': '1d4 p', 'weight': '1', 'properties': 'finesse, light, thrown(20/60)'},
-    'darts'       : {'damage': '1d4 p', 'weight': '1/4', 'properties': 'finesse, thrown(20/60)'},
-    'flail'       : {'damage': '1d6 b', 'weight': '2', 'properties': ''},
-    'hammer'      : {'damage': '1d4 b', 'weight': '2', 'properties': 'light, thrown(20/60)'},
-    'knife'       : {'damage': '1d4 s', 'weight': '1', 'properties': 'finesse, light, thrown(10/60)'},
-    'longbow'     : {'damage': '1d8 p', 'weight': '2', 'properties': 'range(150/600), heavy, two-handed'},
-    'longsword'   : {'damage': '1d8 s', 'weight': '3', 'properties': 'versatile (1d10)'},
-    'mace'        : {'damage': '1d6 b', 'weight': '4', 'properties': ''},
-    'scythe'      : {'damage': '1d6 s', 'weight': '3', 'properties': 'two-handed'},
-    'shortbow'    : {'damage': '1d6 p', 'weight': '2', 'properties': 'range(80/320), two-handed'},
-    'short sword' : {'damage': '1d6 p', 'weight': '2', 'properties': 'finesse, light'},
-    'sickle'      : {'damage': '1d4 s', 'weight': '2', 'properties': 'light'},
-    'sling'       : {'damage': '1d4 b', 'weight': '-', 'properties': 'range(30/120)'},
-    'spear'       : {'damage': '1d6 p', 'weight': '3', 'properties': 'thrown(20/60), versatile(1d8)'},
-    'staff'       : {'damage': '1d6 b', 'weight': '4', 'properties': 'versatile (1d8)'},
-    'whip'        : {'damage': '1d4 s', 'weight': '3', 'properties': 'finesse, reach'},
-    'acid splash' : {'damage': '1d6',   'weight': '-', 'properties': 'range: 60, 1-2 creatures within 5 feet, Dex save'},
-    'fire bolt'   : {'damage': '1d10',  'weight': '-', 'properties': 'range 120, Attack roll'},
-    'ray of frost': {'damage': '1d8',   'weight': '-', 'properties': 'range: 60, Attack roll, -10 feet movement on hit'},
+    'axe'            : {'damage': '1d6 s', 'weight': '4', 'properties': 'versatile (1d8)'},
+    'club'           : {'damage': '1d4 b', 'weight': '2', 'properties': 'light'},
+    'dagger'         : {'damage': '1d4 p', 'weight': '1', 'properties': 'finesse, light, thrown(20/60)'},
+    'darts'          : {'damage': '1d4 p', 'weight': '1/4', 'properties': 'finesse, thrown(20/60)'},
+    'flail'          : {'damage': '1d6 b', 'weight': '2', 'properties': ''},
+    'hammer'         : {'damage': '1d4 b', 'weight': '2', 'properties': 'light, thrown(20/60)'},
+    'knife'          : {'damage': '1d4 s', 'weight': '1', 'properties': 'finesse, light, thrown(10/60)'},
+    'longbow'        : {'damage': '1d8 p', 'weight': '2', 'properties': 'range(150/600), heavy, two-handed'},
+    'longsword'      : {'damage': '1d8 s', 'weight': '3', 'properties': 'versatile (1d10)'},
+    'mace'           : {'damage': '1d6 b', 'weight': '4', 'properties': ''},
+    'pitchfork'      : {'damage': '1d6 p', 'weight': '5', 'properties': 'versatile (1d8), thrown(10/40)'},
+    'scythe'         : {'damage': '1d6 s', 'weight': '3', 'properties': 'two-handed'},
+    'shortbow'       : {'damage': '1d6 p', 'weight': '2', 'properties': 'range(80/320), two-handed'},
+    'short sword'    : {'damage': '1d6 p', 'weight': '2', 'properties': 'finesse, light'},
+    'sickle'         : {'damage': '1d4 s', 'weight': '2', 'properties': 'light'},
+    'sling'          : {'damage': '1d4 b', 'weight': '-', 'properties': 'range(30/120)'},
+    'spear'          : {'damage': '1d6 p', 'weight': '3', 'properties': 'thrown(20/60), versatile(1d8)'},
+    'staff'          : {'damage': '1d6 b', 'weight': '4', 'properties': 'versatile (1d8)'},
+    'whip'           : {'damage': '1d4 s', 'weight': '3', 'properties': 'finesse, reach'},
+    'acid splash'    : {'damage': '1d6',   'weight': '-', 'properties': 'range: 60, 1-2 creatures within 5 feet, Dex save'},
+    'blade ward'     : {'damage': '-',     'weight': '-', 'properties': 'resistance vs bludgeoning, piercing and slashing damage'},
+    'fire bolt'      : {'damage': '1d10',  'weight': '-', 'properties': 'range 120, Attack roll'},
+    'magic stone'    : {'damage': '1d6 b', 'weight': '-', 'properties': 'range: 60, 3 pebbles, use spellcasting mod for attack and damage'},
+    'guidance'       : {'damage': '-',     'weight': '-', 'properties': 'Touched creature adds 1d4 to one ability check of its choice'},
+    'light'          : {'damage': '-',     'weight': '-', 'properties': 'Touched object sheds light in 20\' and dim light another 20\''},
+    'produce flame'  : {'damage': '1d8 f', 'weight': '-', 'properties': 'range: 30, attack roll'},
+    'ray of frost'   : {'damage': '1d8 b', 'weight': '-', 'properties': 'range: 60, Attack roll, -10 feet movement on hit'},
+    'shocking grasp' : {'damage': '1d8 e', 'weight': '-', 'properties': 'touch attack (advantage if target is in metal armor)'},
+    'true strike'    : {'damage': '-',     'weight': '-', 'properties': 'range: 30, advantage on next turn, first attack vs target'},
+
 }
 
 ranged = [
@@ -466,9 +482,9 @@ race_traits = {
     'elf'          : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'fairy'        : {'languages': 'Common, Sylvan',            'size': 'Small' , 'speed':30, 'skin': 'fur'       },
     'firbolg'      : {'languages': 'Common, Elvish, Giant',     'size': 'Medium', 'speed':30, 'skin': 'fur'       },
-    'fire Genasi'  : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'fire genasi'  : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'githyanki'    : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30, 'skin': 'fur'       },
-    'Githzerai'    : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'githzerai'    : {'languages': 'Common, Gith',              'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'gnome'        : {'languages': 'Common, Gnomish',           'size': 'Small' , 'speed':25, 'skin': 'fur'       },
     'goblin'       : {'languages': 'Common, Goblin',            'size': 'Small' , 'speed':30, 'skin': 'fur'       },
     'goliath'      : {'languages': 'Common, Giant',             'size': 'Medium', 'speed':30, 'skin': 'skin'      },
@@ -551,7 +567,7 @@ def character(races=None, classes=None ):
 
     weapon_ability = 'str'
     if weapon in cantrip:
-        weapon_ability = 'int'
+        weapon_ability = 'int' #todo fix for caster types
     elif weapon in ranged:
         weapon_ability = 'dex'
 
@@ -564,8 +580,14 @@ def character(races=None, classes=None ):
     wstats['name'] = weapon
     attacks = [wstats]
 
-    
-    if 'thrown' in wstats['properties']:
+
+    if wstats['damage'] == '-':
+        wstats2 = dict(weapon_stats['club'])
+        wstats2['name'] = 'club'
+        wstats2['atk_bonus'] = f'{(stats["str"]["mod"] + proficiency_bonus):+}'
+        attacks.append(wstats2)
+        char['weapon'] = 'club'
+    elif 'thrown' in wstats['properties']:
         wstats2 = dict(weapon_stats.get(weapon, default_weapon))
         wstats2['name'] = f'{weapon} (thrown)'
         wstats2['atk_bonus'] = f'{(stats["dex"]["mod"] + proficiency_bonus):+}'
