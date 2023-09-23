@@ -529,13 +529,15 @@ def description(race):
 def statblock(main=None):
     vals = [round(random.gammavariate(10, .4))+6 for x in range(6)]
     labels = ['str', 'dex', 'con', 'int', 'wis', 'cha']
-    stats = {}
+    stats = dict(zip(labels, [{'index':i} for i in range(6)]))
     if main and main in labels:
-        stats[main] = {'val': max(vals)}
+        stats[main]['val'] = max(vals)
         vals.remove(max(vals))
         labels.remove(main)
 
-    stats.update(zip(labels, [{'val': v} for v in vals]))
+    for label in labels:
+        val = vals.pop()
+        stats[label]['val'] = val
     return stats
 
 proficiency_bonus = 1
