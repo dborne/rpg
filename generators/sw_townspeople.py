@@ -318,70 +318,71 @@ cantrip = (
 )
 
 jobs = {
-    'alchemist':           ('staff', 'Oil - 1 flask', 'Arcana'),
-    'animal trainer':      (tool, animal, 'Animal Handling'),
-    'apprentice':          (tool, stuff, 'Athletics'),
-    'armorer':             ('hammer', 'Iron helmet', 'Athletics'),
-    'artisan':             ('staff', 'Clay', 'Perception'),
-    'astrologer':          ('dagger', 'A spyglass', 'Nature'),
-    'barber':              ('straight razor', 'Bandages', 'Medicine'),
-    'barkeep':             (tool, 'A bottle of spirits', 'Insight'),
-    'blacksmith':          ('hammer', 'Steel tongs', 'Athletics'),
-    'bowyer':              ('longbow', '20 arrows', 'Perception'),
-    'caravan guard':       ('short sword', 'Padded armor', 'Survival'),
-    'carpenter':           ('hammer', 'Nails', 'Perception'),
-    'cobbler':             ('awl', 'Shoehorn', 'Perception'),
-    'confidence artist':   ('dagger', 'Quality cloak', 'Deception'),
-    'cook':                ('meat cleaver', 'Fresh meat', 'Survival'),
-    'cooper':              ('crowbar', 'Barrel', 'Perception'),
-    'cutpurse':            ('dagger', stuff, 'Sleight of Hand'),
-    'ditch digger':        ('shovel', stuff, 'Athletics'),
-    'drifter':             ('sling', stuff, 'Investigation'),
-    'farmer':              (tool,  animal, 'Animal Handling'),
-    'farrier':             ('hammer', 'Pliers', 'Animal Handling'),
-    'forester':            ('shortbow', 'Herbs', 'Nature'),
-    'fortune-teller':      (('guidance', 'true strike'), 'Tarot deck', 'Performance'),
-    'gambler':             ('sap', 'Dice', 'Sleight of Hand'),
-    'gongfarmer':          (tool, 'Sack of night soil', 'Athletics'),
-    'grave digger':        ('shovel', stuff, 'Athletics'),
-    'groom':               ('whip', 'saddle horse', 'Animal Handling'),
-    'guard':               ('spear', 'shield', 'Intimidation'),
-    'guild beggar':        ('sling', 'Crutches', 'Deception'),
-    'healer':              ('club', 'Vial of holy water', 'Medicine'),
-    'hedge witch':         ('magic stone', 'Healing herbs', 'Nature'),
-    'herbalist':           (tool, 'Herbs', 'Nature'),
-    'herder':              ('staff', 'Herding dog', 'Animal Handling'),
-    'hunter':              ('shortbow', 'Deer pelt', 'Stealth'),
-    'indentured servant':  ('staff', stuff, 'Athletics'),
-    'innkeeper':           ('club', stuff, 'Insight'),
-    'jester':              ('darts', 'Silk clothes', 'Performance'),
-    'jeweler':             ('fine dagger', 'Gem worth 20 gp', 'Perception'),
-    'locksmith':           ('dagger', 'Fine tools', 'Perception'),
-    'mason':               (tool, stuff, 'Athletics'),
-    'mayor':               ('mace', stuff, 'Persuasion'),
-    'mercenary':           ('longsword', 'Hide armor', 'Survival'),
-    'merchant':            ('dagger', stuff, 'Persuasion'),
-    'miller/baker':        ('rolling pin', 'Flour - 1 lb', 'Athletics'),
-    'miner':               ('pick', 'Lantern', 'Athletics'),
-    'minstrel':            ('dagger', 'Lyre', 'Performance'),
-    'noble':               ('longsword', 'Gold signet ring', 'History'),
-    'orphan':              ('club', 'Rag doll', 'Stealth'),
-    'outlaw':              ('short sword', 'Leather tunic', 'Deception'),
-    'rat catcher':         ('club', 'Small dog', 'Animal Handling'),
-    'sage':                ('dagger', 'Notebook and pencils', 'History'),
-    'scribe':              ('darts', 'Parchment, Quill pen and ink', 'Investigation'),
-    'shaman':              (cantrip, 'Herbs', 'Religion'),
-    'smuggler':            ('sling', 'Waterproof sack', 'Stealth'),
-    'squire':              ('short sword', 'Iron helmet', 'Athletics'),
-    'tanner':              ('knife', 'Waterproof bag', 'Athletics'),
-    'trader':              ('short sword', '20 sp', 'Persuasion'),
-    'trapper':             ('sling', 'Badger pelt', 'Survival'),
-    'urchin':              ('stick', 'Begging bowl', 'Stealth'),
-    'vagrant':             ('club', 'Begging bowl', 'Deception'),
-    'wainwright':          (tool, 'Pushcart', 'Athletics'),
-    'weaver':              ('dagger', 'Fine suit of clothes', 'Perception'),
-    'wizard\'s apprentice':(cantrip, 'Spellbook', 'Arcana'),
-    'woodcutter':          ('axe', 'Bundle of wood', 'Athletics')
+    'alchemist':           ('staff', 'Oil - 1 flask', 'Arcana', 'int'),
+    'animal trainer':      (tool, animal, 'Animal Handling', 'wis'),
+    'apprentice':          (tool, stuff, 'Athletics', 'str'),
+    'armorer':             ('hammer', 'Iron helmet', 'Athletics', 'str'),
+    'artisan':             ('staff', 'Clay', 'Perception', 'dex'),
+    'astrologer':          ('dagger', 'A spyglass', 'Nature', 'int'),
+    'baker':               ('rolling pin', 'Loaf of fresh bread', 'Perception', None),
+    'barber':              ('straight razor', 'Bandages', 'Medicine', 'dex'),
+    'barkeep':             (tool, 'A bottle of spirits', 'Insight', 'cha'),
+    'blacksmith':          ('hammer', 'Steel tongs', 'Athletics', 'str'),
+    'bowyer':              ('longbow', '20 arrows', 'Perception', 'dex'),
+    'caravan guard':       ('short sword', 'Padded armor', 'Survival', 'con'),
+    'carpenter':           ('hammer', 'Nails', 'Perception', 'dex'),
+    'cobbler':             ('awl', 'Shoehorn', 'Perception', 'dex'),
+    'confidence artist':   ('dagger', 'Quality cloak', 'Deception', 'cha'),
+    'cook':                ('meat cleaver', 'Fresh meat', 'Survival', None),
+    'cooper':              ('crowbar', 'Barrel', 'Perception', 'dex'),
+    'cutpurse':            ('dagger', stuff, 'Sleight of Hand', 'dex'),
+    'ditch digger':        ('shovel', stuff, 'Athletics', 'str'),
+    'drifter':             ('sling', stuff, 'Investigation', None),
+    'farmer':              (tool,  animal, 'Animal Handling', None),
+    'farrier':             ('hammer', 'Pliers', 'Animal Handling', 'str'),
+    'forester':            ('shortbow', 'Herbs', 'Nature', 'wis'),
+    'fortune-teller':      (('guidance', 'true strike'), 'Tarot deck', 'Performance', 'cha'),
+    'gambler':             ('sap', 'Dice', 'Sleight of Hand', 'int'),
+    'gongfarmer':          (tool, 'Sack of night soil', 'Athletics', None),
+    'grave digger':        ('shovel', stuff, 'Athletics', 'str'),
+    'groom':               ('whip', 'saddle horse', 'Animal Handling', 'wis'),
+    'guard':               ('spear', 'shield', 'Intimidation', 'con'),
+    'guild beggar':        ('sling', 'Crutches', 'Deception', 'cha'),
+    'healer':              ('club', 'Vial of holy water', 'Medicine', 'wis'),
+    'hedge witch':         ('magic stone', 'Healing herbs', 'Nature', 'wis'),
+    'herbalist':           (tool, 'Herbs', 'Nature', 'int'),
+    'herder':              ('staff', 'Herding dog', 'Animal Handling', None),
+    'hunter':              ('shortbow', 'Deer pelt', 'Stealth', 'dex'),
+    'indentured servant':  ('staff', stuff, 'Athletics', None),
+    'innkeeper':           ('club', stuff, 'Insight', 'cha'),
+    'jester':              ('darts', 'Silk clothes', 'Performance', 'cha'),
+    'jeweler':             ('fine dagger', 'Gem worth 20 gp', 'Perception', 'dex'),
+    'locksmith':           ('dagger', 'Fine tools', 'Sleight of Hand', 'dex'),
+    'mason':               (tool, stuff, 'Athletics', 'str'),
+    'mayor':               ('mace', stuff, 'Persuasion', 'wis'),
+    'mercenary':           ('longsword', 'Hide armor', 'Survival', 'str'),
+    'merchant':            ('dagger', stuff, 'Persuasion', 'cha'),
+    'miller':              ('short sword', 'Flour - 1 lb', 'Athletics', 'str'),
+    'miner':               ('pick', 'Lantern', 'Athletics', 'con'),
+    'minstrel':            ('dagger', 'Lyre', 'Performance', 'cha'),
+    'noble':               ('longsword', 'Gold signet ring', 'History', 'int'),
+    'orphan':              ('club', 'Rag doll', 'Stealth', None),
+    'outlaw':              ('short sword', 'Leather tunic', 'Deception', None),
+    'rat catcher':         ('club', 'Small dog', 'Animal Handling', 'dex'),
+    'sage':                ('dagger', 'Notebook and pencils', 'History', 'int'),
+    'scribe':              ('darts', 'Parchment, Quill pen and ink', 'Investigation', 'int'),
+    'shaman':              (cantrip, 'Herbs', 'Religion', 'wis'),
+    'smuggler':            ('sling', 'Waterproof sack', 'Stealth', 'dex'),
+    'squire':              ('short sword', 'Iron helmet', 'Athletics', 'str'),
+    'tanner':              ('knife', 'Waterproof bag', 'Athletics', None),
+    'trader':              ('short sword', '20 sp', 'Persuasion', 'cha'),
+    'trapper':             ('sling', 'Badger pelt', 'Survival', 'wis'),
+    'urchin':              ('stick', 'Begging bowl', 'Sleight of Hand', 'dex'),
+    'vagrant':             ('club', 'Begging bowl', 'Deception', None),
+    'wainwright':          (tool, 'Pushcart', 'Athletics', 'dex'),
+    'weaver':              ('dagger', 'Fine suit of clothes', 'Perception', 'dex'),
+    'wizard\'s apprentice':(cantrip, 'Spellbook', 'Arcana', 'int'),
+    'woodcutter':          ('axe', 'Bundle of wood', 'Athletics', 'dex')
 }
 
 armor_values = {
@@ -525,10 +526,17 @@ def description(race):
         f'{random.choice(clothing)} clothes.'
 
     
-def statblock():
-    labels = ('str', 'dex', 'con', 'int', 'wis', 'cha')
-    vals = [{'val':round(random.gammavariate(10, .4))+6} for x in range(6)]
-    return dict(zip(labels, vals))
+def statblock(main=None):
+    vals = [round(random.gammavariate(10, .4))+6 for x in range(6)]
+    labels = ['str', 'dex', 'con', 'int', 'wis', 'cha']
+    stats = {}
+    if main and main in labels:
+        stats[main] = {'val': max(vals)}
+        vals.remove(max(vals))
+        labels.remove(main)
+
+    stats.update(zip(labels, [{'val': v} for v in vals]))
+    return stats
 
 proficiency_bonus = 1
 score_mod = lambda x: x//2 - 5
@@ -540,15 +548,15 @@ def character(races=None, classes=None ):
     if classes is None:
         classes = list(jobs.keys())
     char = {}
-    stats = statblock()
+    job = random.choice(classes)
+    (weapon, gear, prof, stat) = jobs[job]
+    stats = statblock(main=stat)
     for ability in stats.keys():
         mod = score_mod(stats[ability]['val'])
         stats[ability]['mod'] = mod
         stats[ability]['modstr'] = f'{mod:+}'
-        
+
     char['abilities'] = stats
-    job = random.choice(classes)
-    (weapon, gear, prof) = jobs[job]
 
     if isinstance(weapon, tuple):
         weapon = random.choice(weapon)
