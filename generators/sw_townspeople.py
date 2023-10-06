@@ -467,7 +467,7 @@ jobs = {
     'smuggler':            ('sling', 'Waterproof sack', 'Stealth', 'dex'),
     'squire':              ('short sword', 'Iron helmet', 'Athletics', 'str'),
     'tanner':              ('knife', 'Waterproof bag', 'Athletics', None),
-    'tavern keeper':       ('club', 'jug of ale', 'Insight', 'cha')
+    'tavern keeper':       ('club', 'jug of ale', 'Insight', 'cha'),
     'teamster':            ('whip', stuff, 'Animal Handling', 'str'),
     'trader':              ('short sword', '20 sp', 'Persuasion', 'cha'),
     'trapper':             ('sling', 'Badger pelt', 'Survival', 'wis'),
