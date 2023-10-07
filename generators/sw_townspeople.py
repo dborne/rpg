@@ -647,11 +647,6 @@ def character(races=None, classes=None ):
 
     race = random.choice(races)
     char['description'] = description(race)
-
-    print (job)
-    print (char['description'])
-    return
-
     char['race'] = race
     char['size'] = race_traits[race]['size']
     char['speed'] = race_traits[race]['speed']
