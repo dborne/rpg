@@ -68,7 +68,7 @@ details =  (
     {'default': 'a broken nose', 'feathers':'a crooked beak'},
     {'default': 'a bronze complexion', 'fur': 'bronze skin', 'scales': 'bronze scales', 'feathers': 'golden feathers', 'skin': 'bronze skin', 'mechanical': 'bronze plating'},
     {'default': 'a prominent brow', 'fur': 'bushy eyebrows',},
-    {'default': 'a dark complexion', 'fur': 'curly hair', 'scales': 'patterned scales', 'feathers': 'striped wings', 'skin': 'tattooed arms'},
+    {'default': 'a dark complexion', 'fur': 'curly hair', 'scales': 'patterned scales', 'feathers': 'striped wings', 'skin': 'tattooed arms', 'mechanical': 'black line work on their chassis'},
     {'default': 'dark skin', 'scales': 'dark scales', 'feathers': 'dark feathers', 'mechanical': 'dark plating'},
     {'default': 'a deep voice',},
     {'default': 'a high-pitched voice',},
@@ -77,31 +77,31 @@ details =  (
     {'default': 'freckles', 'scales': 'mottled scales', 'feathers': 'speckled plumage'},
     {'default': 'a gravelly voice',},
     {'default': 'a melodious voice',},
-    {'default': 'a gold tooth', 'feathers': 'a chipped beak'},
+    {'default': 'a gold tooth', 'feathers': 'a chipped beak', 'mechanical': 'a gilt faceplate'},
     {'default': 'a hoarse voice',},
     {'default': 'a pronounced chin', 'fur': 'a huge beard', 'feathers': 'a large beak'},
-    {'default': 'light skin', 'scales': 'pale shiny scales', 'feathers': 'faded plumage'},
+    {'default': 'light skin', 'scales': 'pale shiny scales', 'feathers': 'faded plumage', 'mechanical': 'lightly colored plating'},
     {'default': 'a long face', 'fur': 'long hair', 'scales': 'bright scales', 'feathers': 'graceful plumage', 'skin': 'leathery skin'},
     {'default': 'a dirty countenance', 'fur': 'matted hair', 'scales': 'dull scales', 'feathers': 'dusty feathers', 'skin': 'dry skin'},
     {'default': 'missing teeth', 'feathers': 'a chipped beak', 'mechanical': 'a damaged faceplate'},
     {'default': 'old eyes', 'fur': 'mutton chops'},
-    {'default': 'nine fingers',},
-    {'default': 'oily skin', 'fur': 'oiled hair', 'scales': 'oily scales', 'feathers': 'greasy feathers', 'skin': 'greasy skin'},
+    {'default': 'nine fingers', 'mechanical': 'four-fingered hands'},
+    {'default': 'oily skin', 'fur': 'oiled hair', 'scales': 'oily scales', 'feathers': 'greasy feathers', 'skin': 'greasy skin', 'mechanical': 'oil stained joints'},
     {'default': 'one eye',},
     {'default': 'shifty eyes',},
     {'default': 'piercing eyes',},
     {'default': 'dark eyes',},
-    {'default': 'a pale complexion', 'fur': 'pale skin', 'scales': 'pale scales', 'feathers': 'pale feathers', 'skin': 'pale skin'},
+    {'default': 'a pale complexion', 'fur': 'pale skin', 'scales': 'pale scales', 'feathers': 'pale feathers', 'skin': 'pale skin', 'mechanical': 'pale lineword on their chassis'},
     {'default': 'piercings',},
-    {'default': 'a pale complexion', 'fur': 'sallow skin', 'scales': 'blotchy scales', 'feathers': 'patchy feathers', 'skin': 'sallow skin'},
-    {'default': 'scars',},
+    {'default': 'a sallow complexion', 'fur': 'sallow skin', 'scales': 'blotchy scales', 'feathers': 'patchy feathers', 'skin': 'sallow skin', 'mechanical': 'faded plating'},
+    {'default': 'scars', 'mechanical': 'some obvious repair work on their chassis',},
     {'default': 'an oddly shaped head', 'fur': 'a shaved head', 'scales': 'a ridge of scales on their head', 'feathers': 'a molting head', 'skin': 'a shiny bald head'},
-    {'default': 'a sunburn', 'mechanical': 'soot stains', 'feathers': 'sun-bleached feathers'},
-    {'default': 'a messy demeanor',  'fur': 'tangled hair', 'scales': 'missing scales', 'feathers': 'molting wings', 'skin': 'a blotchy complexion'},
+    {'default': 'a sunburn', 'mechanical': 'a sun-bleached chassis', 'feathers': 'sun-bleached feathers'},
+    {'default': 'a messy demeanor',  'fur': 'tangled hair', 'scales': 'missing scales', 'feathers': 'molting wings', 'skin': 'a blotchy complexion', 'mechanical': 'soot stained plating',},
     {'default': 'tattoos', 'mechanical': 'fine linework on their chassis'},
     {'default': 'an interesting hat', 'fur': 'a topknot', 'feathers': 'an impressive feather crest'},
     {'default': 'a long nose', 'feathers': 'a long beak'},
-    {'default': 'a well-muscled build',},
+    {'default': 'a well-muscled build', 'mechanical': 'sturdy construction'},
     {'default': 'long fingers',},
 )
 
@@ -281,7 +281,6 @@ personality = (
     'rude',
     'rugged',
     'sarcastic',
-    'savage',
     'selfish',
     'scheming',
     'serene',
@@ -289,7 +288,7 @@ personality = (
     'slick',
     'smug',
     'sober',
-    'sophisticated'
+    'sophisticated',
     'spacey',
     'stoic',
     'stubborn',
@@ -301,7 +300,6 @@ personality = (
     'uncouth',
     'unkempt',
     'vacuous',
-    'violent',
     'wary',
     'weird',
     'wise',
@@ -549,31 +547,16 @@ skill_ability = {
     'Persuasion' : 'cha',
 }
 
-available_races = (
-    'aarakocra',
-    'dragonborn',
-    'dwarf',
-    'elf',
-    'gnome',
-    'half-elf',
-    'half-orc',
-    'halfling',
-    'human',
-    'kenku',
-    'kobold',
-    'tiefling',
-)
-
 race_traits = {
     'aarakocra'    : {'languages': 'Common, Aarakocra, Auran',  'size': 'Medium', 'speed':30, 'skin': 'feathers'  },
     'aasimar'      : {'languages': 'Common, Celestial',         'size': 'Medium', 'speed':30, 'skin': 'fur'       },
-    'air Genasi'   : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'air genasi'   : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'bugbear'      : {'languages': 'Common, Goblin',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'centaur'      : {'languages': 'Common, Sylvan',            'size': 'Medium', 'speed':40, 'skin': 'fur'       },
     'changeling'   : {'languages': 'Common, 2',                 'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'dragonborn'   : {'languages': 'Common, Draconic',          'size': 'Medium', 'speed':30, 'skin': 'scales'    },
     'dwarf'        : {'languages': 'Common, Dwarf',             'size': 'Medium', 'speed':25, 'skin': 'fur'       },
-    'earth Genasi' : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'earth genasi' : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'eladrin'      : {'languages': 'Common, Sylvan',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'elf'          : {'languages': 'Common, Elvish',            'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'fairy'        : {'languages': 'Common, Sylvan',            'size': 'Small' , 'speed':30, 'skin': 'fur'       },
@@ -603,11 +586,12 @@ race_traits = {
     'tiefling'     : {'languages': 'Common, Infernal',          'size': 'Medium', 'speed':30, 'skin': 'fur'       },
     'tortle'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30, 'skin': 'skin'      },
     'triton'       : {'languages': 'Common, Aquan',             'size': 'Medium', 'speed':30, 'skin': 'fur'       },
-    'vedalken'     : {'languages': 'Common, Vedalken, 1',       'size': 'Medium', 'speed':30, 'skin': 'mechanical'},
-    'warforged'    : {'languages': 'Common',                    'size': 'Medium', 'speed':30, 'skin': 'fur'       },
+    'vedalken'     : {'languages': 'Common, Vedalken, 1',       'size': 'Medium', 'speed':30, 'skin': 'skin'      },
+    'warforged'    : {'languages': 'Common',                    'size': 'Medium', 'speed':30, 'skin': 'mechanical'},
     'water genasi' : {'languages': 'Common, Primordial',        'size': 'Medium', 'speed':30, 'skin': 'other'     },
     'yuan-Ti'      : {'languages': 'Common, Abyssal, Draconic', 'size': 'Medium', 'speed':30, 'skin': 'scales'    },
 }
+
 
 def description(race):
     pers = random.choice(personality)
@@ -620,7 +604,7 @@ def description(race):
         f'{race} with {detail} and is wearing '\
         f'{random.choice(clothing)} clothes.'
 
-    
+
 def statblock(main=None):
     vals = [round(random.gammavariate(10, .4))+6 for x in range(6)]
     labels = ['str', 'dex', 'con', 'int', 'wis', 'cha']
@@ -641,7 +625,7 @@ score_mod = lambda x: x//2 - 5
 
 def character(races=None, classes=None ):
     if races is None:
-        races = available_races
+        races = list(race_traits.keys())
     if classes is None:
         classes = list(jobs.keys())
     char = {}
@@ -663,6 +647,11 @@ def character(races=None, classes=None ):
 
     race = random.choice(races)
     char['description'] = description(race)
+
+    print (job)
+    print (char['description'])
+    return
+
     char['race'] = race
     char['size'] = race_traits[race]['size']
     char['speed'] = race_traits[race]['speed']
